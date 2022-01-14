@@ -1,3 +1,21 @@
 .user-wrap{
     display: flex;
 }
+.user{
+    width: 500px;
+    padding: 10px;
+    border: 1px solid orangered;
+    margin: 5px;
+}
+.details-info{
+    margin-top: 5px;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid orangered;
+}
+.post{
+    margin-top: 5px;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid orangered;
+}

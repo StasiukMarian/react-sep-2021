@@ -9,7 +9,7 @@ const Posts = ({id}) => {
         userService.getPosts().then(value => setPosts(value.filter(elem => elem.userId === id)))
     }, []);
     return (
-        <div>
+        <div className='post'>
             {
                 posts.map(value =>
                     <Post key={value.id}

@@ -33,10 +33,14 @@ const Users = () => {
 
             <div className='details'>
                 {user &&
-                <div>
+                <div className='details-info'>
                     <div>{user.id}.{user.name}  </div>
-                    <p>{user.username}</p>
-                    <p>{user.email}</p>
+                    <div>{user.username}</div>
+                    <div>{user.email}</div>
+                    <div>{user.address.street}</div>
+                    <div>{user.address.city}</div>
+                    <div>{user.phone}</div>
+                    <div>{user.website}</div>
                     <button onClick={() => {
                         checkStatus(true);
                     }}>to post
