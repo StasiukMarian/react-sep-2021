@@ -12,7 +12,6 @@ const Layout = () => {
                 <Link to="/posts">posts</Link>
             </div>
             <Outlet/>
-            <Link to={'/users'} > <button>Action</button> </Link>
         </>
     );
 };
