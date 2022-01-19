@@ -1,0 +1,8 @@
+.usersWrap{
+    display: flex;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+    margin-right: 150px;
+}

@@ -1,0 +1,15 @@
+.header{
+    max-height: 70px;
+    margin: 0 auto;
+    background-color: black;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.header a {
+    font-size: 30px;
+    color: inherit;
+    text-decoration: none;
+}
