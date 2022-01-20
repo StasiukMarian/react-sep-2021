@@ -1,21 +1,25 @@
 import React, {useEffect, useState} from 'react';
 
 import {getUsers} from "../../services/usersService";
+
 import User from "./User";
 
 const Users = () => {
+
     const [users, setUsers] = useState([])
+
     useEffect(() => {
         getUsers().then(value => setUsers(value))
     }, [])
-    const [valueName, setValueName] = useState('')
-    const filterUserName = users.filter(user => {
-        return user.name.toLowerCase().includes(valueName.toLowerCase())
-    })
 
+    const [valueName, setValueName] = useState('')
     const [valueUsername, setValueUsername] = useState('')
-    const filterUsername = users.filter(user => {
-        return user.username.toLowerCase().includes(valueUsername.toLowerCase())
+    const [valueEmail, setValueEmail] = useState('')
+
+    const filterUserName = users.filter(user => {
+        return user.name.toLowerCase().includes(valueName.toLowerCase()) &&
+            user.username.toLowerCase().includes(valueUsername.toLowerCase()) &&
+            user.email.toLowerCase().includes(valueEmail.toLowerCase())
     })
 
     return (
@@ -32,16 +36,15 @@ const Users = () => {
                 className='search_input'
                 onChange={(e) => setValueUsername(e.target.value)}
             />
+            <input
+                type="text"
+                placeholder='choose your email'
+                className='search_input'
+                onChange={(e) => setValueEmail(e.target.value)}
+            />
             {
-
-                filterUserName.map(value => <User key={value.id} id={value.id} name={value.name}
-                                               username={value.username}/>)
+                filterUserName.map(user => <User key={user.id} user={user}/>)
             }
-            {
-                filterUsername.map(value => <User key={value.id} id={value.id} name={value.name}
-                                                  username={value.username}/>)
-            }
-            {/*двічі рендерить і працює окремо для різних рендерів*!/*/}
 
         </div>
     );
