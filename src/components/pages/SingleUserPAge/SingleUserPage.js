@@ -27,6 +27,7 @@ const SingleUserPage = () => {
                      <div>{user.phone}</div>
                      <div>{user.website}</div>
                      <Link to={'posts'} state={user.id}><button>current post</button></Link>
+                     <Link to={'albums'} state={user.id}><button>current album</button></Link>
                      <Outlet/>
                  </div>
                 )}

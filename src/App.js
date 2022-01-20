@@ -10,18 +10,25 @@ import SingleUserPage from "./components/pages/SingleUserPAge/SingleUserPage";
 import SinglePostPage from "./components/pages/SinglePostPage/SinglePostPage";
 import UserPostPage from "./components/pages/UserPostPage/UserPostPage";
 import PostCommentPage from "./components/pages/PostCommentPage/PostCommentPage";
+import AlbumPage from "./components/pages/AlbumPage/AlbumPage";
+import PhotoPage from "./components/pages/PhotoPage/PhotoPage";
 
 function App() {
     return (
         <>
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
+
                     <Route path={'/home'} element={<HomePage/>}/>
                     <Route path={'users'} element={<UsersPage/>}>
                         <Route path={':id'} element={<SingleUserPage/>}>
                             <Route path={'posts'} element={<UserPostPage/>}/>
+                            <Route path={'albums'} element={<AlbumPage/>}>
+                                <Route path={':albumId/photos'} element={<PhotoPage/>}/>
+                            </Route>
                         </Route>
                     </Route>
+
                     <Route path={'posts'} element={<PostsPage/>}>
                         <Route path={':id'} element={<SinglePostPage/>}>
                             <Route path={'comments'} element={<PostCommentPage/>}/>
