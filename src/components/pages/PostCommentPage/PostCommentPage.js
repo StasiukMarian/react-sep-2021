@@ -4,8 +4,8 @@ import {useLocation} from "react-router-dom";
 
 const PostCommentPage = () => {
     const [postComments, setPostComments] = useState([])
-    const {state}= useLocation()
-    useEffect(()=>{
+    const {state} = useLocation()
+    useEffect(() => {
         postService.getCommentById(state).then(value => setPostComments(value))
     }, [])
     return (

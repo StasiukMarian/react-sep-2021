@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
+import {Outlet} from "react-router-dom"
 
 import User from "../../User/User";
-import {Outlet} from "react-router-dom"
 import {userService} from "../../services/user-service";
-
 import css from "./UsersPage.module.css"
 
 const UsersPage = () => {

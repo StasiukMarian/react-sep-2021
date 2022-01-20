@@ -5,7 +5,7 @@ const Album = ({album}) => {
     const {id, title} = album
     return (
         <div>
-            {id})  <Link to={id.toString()} state={album}> {title}</Link>
+            {id})  <div>{title}</div>
             <Link to={`${id}/photos`} state={album.id}><button>current photo</button></Link>
         </div>
 

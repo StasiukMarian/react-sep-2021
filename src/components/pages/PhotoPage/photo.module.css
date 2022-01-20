@@ -1,0 +1,9 @@
+img{
+    width: 200px;
+    height: 200px;
+}
+.photoWrap{
+    max-width: 300px;
+    margin-top: 10px;
+    padding: 10px;
+}
