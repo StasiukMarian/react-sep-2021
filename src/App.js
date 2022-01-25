@@ -1,19 +1,12 @@
 import './App.css';
-import {useEffect, useState} from "react";
-import UserComponent from "./UserComponent";
-import {getUsers} from "./UserServices";
+import Form from "./components/Form/Form";
+import FormHook from "./components/FormHook/FormHook";
 
 function App() {
-let [users, setUsers] = useState([])
-    useEffect(()=>{
-            getUsers().then(value => setUsers(value))
-    }, [])
-
   return (
     <div>
-        {
-            users.map(value => <UserComponent key = {value.id} item = {value}/>)
-        }
+      <Form/>
+    {/*<FormHook/>*/}
     </div>
   );
 }
